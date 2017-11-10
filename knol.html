@@ -1,6 +1,44 @@
-<script type="text/javascript">$(document).on('click', '.list > li ', function () {
-$(this).next('.list').children().toggle();
-})</script>
+<html>
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <style type="text/css">
 
 
-<ul><li><span class="name">Spring boot</span><ul><li><span class="name">jar / war 로 재사용</span><ul><li><span class="name">jar 의 내용이 텅비어 있어서 참조가 안될 때</span><ul><li><span class="name">&lt;plugin&gt;</span><ul><li><span class="name">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span></li><li><span class="name">&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span></li><li><span class="name">&lt;configuration&gt;</span><ul><li><span class="name">&lt;addResources&gt;true&lt;/addResources&gt;</span></li></ul></li><li><span class="name">&lt;/configuration&gt;</span></li></ul></li><li><span class="name">&lt;/plugin&gt;</span></li><li><span class="name"> 를 넣은 경우 그렇다.</span></li></ul></li></ul></li></ul></li><li><span class="name">할일</span><ul><li><span class="name">bpm</span><ul><li><span class="name">VersionManager</span></li></ul></li></ul></li></ul>
+        #menu > ul {
+            display: none;
+            list-style-type:none;
+        }
+
+        #menu > ul > li {
+            list-style:none;
+        }
+
+        #menu > li {
+            list-style:none;
+            font-weight: bold;
+        }
+
+
+        a {
+            color: red;
+        }
+    </style>
+
+
+
+<ul id="menu"><li><span class="name">Spring boot</span><ul><li><span class="name">jar / war 로 재사용</span><ul><li><span class="name">jar 의 내용이 텅비어 있어서 참조가 안될 때</span><ul><li><span class="name">&lt;plugin&gt;</span><ul><li><span class="name">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span></li><li><span class="name">&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span></li><li><span class="name">&lt;configuration&gt;</span><ul><li><span class="name">&lt;addResources&gt;true&lt;/addResources&gt;</span></li></ul></li><li><span class="name">&lt;/configuration&gt;</span></li></ul></li><li><span class="name">&lt;/plugin&gt;</span></li><li><span class="name"> 를 넣은 경우 그렇다.</span></li></ul></li></ul></li></ul></li><li><span class="name">할일</span><ul><li><span class="name">bpm</span><ul><li><span class="name">VersionManager</span></li></ul></li></ul></li></ul>
+
+
+    <script type="text/javascript">
+
+        $("#menu").find("ul").toggle();
+
+        $('li').click(function(e) {
+            e.stopPropagation();
+            $(this).children('ul').slideToggle();
+        });
+
+    </script>
+
